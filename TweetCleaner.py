@@ -1,6 +1,5 @@
 import csv
 import re
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 def read_csv(file_name):
     tweets = []
@@ -46,12 +45,4 @@ def tweet_classifier(tweets):
         tweet.append(trump)
         tweet.append(clinton)
     
-    return tweets
-
-def sentiment_analyzer(tweets):
-    analyser = SentimentIntensityAnalyzer()
-    for tweet in tweets:
-        sentiment = analyser.polarity_scores(tweet[4])
-        tweet.append(sentiment)
-
     return tweets
