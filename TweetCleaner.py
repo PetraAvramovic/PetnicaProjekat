@@ -10,7 +10,7 @@ def read_csv(file_name):
 
         return tweets
 
-def remove_links(tweets):
+def removeLinks(tweets):
     regex = r"(https?:\/\/)(\s)*(www\.)?(\s)*((\w|\s)+\.)*([\w\-\s]+\/)*([\w\-]+)((\?)?[\w\s]*=\s*[\w\%&]*)*"
     for tweet in tweets:
         tweet[4] = re.sub(regex, "", tweet[4])
@@ -24,7 +24,7 @@ def tweets_to_csv(tweets, file_name):
         for tweet in tweets:
             tweets_writer.writerow(tweet)
 
-def tweet_classifier(tweets):
+def tweetClassifier(tweets):
     trump_keywords = ['trump', 'donald', 'republican']
     clinton_keywords = ['clinton', 'hillary', 'democrat']
 
